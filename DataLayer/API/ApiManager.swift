@@ -8,10 +8,6 @@
 
 import Foundation
 import Domain
-//"http://api.openweathermap.org/data/2.5/forecast?q=Singapore&APPID=400db7622e647612468e9fe1c4b5aaf8")
-
-//http://api.openweathermap.org/data/2.5/weather?q=Singapore&appid=400db7622e647612468e9fe1c4b5aaf8
-
 
 //http://api.worldweatheronline.com/premium/v1/weather.ashx?key=13e3c864e295419ba42115515193107&q=Singapore&format=json&num_of_days=1
 
@@ -74,8 +70,8 @@ class APIServiceLayer {
         
         guard let fileUrl = Bundle.main.url(forResource: "weather", withExtension: "json") else {return}
         
-        // var urlRequest = URLRequest(url: url)
-        var urlRequest = URLRequest(url: fileUrl)
+         var urlRequest = URLRequest(url: url)
+        //var urlRequest = URLRequest(url: fileUrl)
         urlRequest.httpMethod = router.method
         
         let session = URLSession(configuration: .default)
@@ -83,7 +79,7 @@ class APIServiceLayer {
         let dataTask = session.dataTask(with: urlRequest) { data, response, error in
             guard error == nil else {
                 completion(.failure(error!))
-                print(error?.localizedDescription as Any)
+                //print(error?.localizedDescription as Any)
                 return
             }
             

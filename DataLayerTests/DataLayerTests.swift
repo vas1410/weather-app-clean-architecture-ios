@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Domain
 @testable import DataLayer
 
 class DataLayerTests: XCTestCase {
@@ -30,5 +31,42 @@ class DataLayerTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    
+    func test_002_checkWheater (){
+        
+        let expectation = XCTestExpectation(description: "API CALL")
+        let city = City(name: "Singapore")
+        
+        
+        APIServiceLayer.request(router: Router.Weather(city: city)) { [weak self] result in
+            
+            guard let self = self else
+                        {
+                            expectation.fulfill()
+                            return
+                        }
+                        switch result {
+                        case .success(let currentWeather):
+                          
+                                XCTAssertNotNil(currentWeather.first)
+                                if let desc = currentWeather.first?.weatherDesc.first?.value {
+                                  XCTAssertEqual(desc, "Partly cloudy")
+                                }
+
+            
+                            break
+            
+                        case .failure:
+                            print(result)
+                            XCTFail("Network Error")
+            
+                        }
+            
+                        expectation.fulfill()
+                    }
+                    wait(for: [expectation], timeout: 10)
+        }
+        
 
 }

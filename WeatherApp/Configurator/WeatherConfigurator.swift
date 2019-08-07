@@ -12,27 +12,27 @@ import Domain
 import PresenterLayer
 import BusinessLayer
 import DataLayer
-protocol AbstractViewController:UIViewController {
+protocol AbstractViewController: UIViewController {
     
 }
 
 
-protocol AbstractWeatherViewController{
-    var input:AbstractWeatherPresenter?{get set}
-    var output:AbstractWeatherInteractor?{get set}
+protocol AbstractWeatherViewController {
+    var input: AbstractWeatherPresenter? {get set}
+    var output: AbstractWeatherInteractor? {get set}
     
 }
 
-class WeatherConfigurator{
+class WeatherConfigurator {
     static var shared = WeatherConfigurator()
     
-    public func configure(for viewcontroller:AbstractWeatherViewController?){
-        guard var vc = viewcontroller else{
+    public func configure(for viewcontroller: AbstractWeatherViewController?){
+        guard var vc = viewcontroller else {
             return
         }
-        let worker:WeatherUsecase = WeatherWorker()
-        let interactor:AbstractWeatherInteractor = WeatherInteractor(worker: worker)
-        let presenter:AbstractWeatherPresenter = WeatherPresenter()
+        let worker: WeatherUsecase = WeatherWorker()
+        let interactor: AbstractWeatherInteractor = WeatherInteractor(worker: worker)
+        let presenter: AbstractWeatherPresenter = WeatherPresenter()
         
         vc.input = presenter
         vc.output = interactor

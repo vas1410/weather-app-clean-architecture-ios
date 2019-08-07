@@ -17,7 +17,7 @@ public class WeatherPresenter:AbstractWeatherPresenter{
         
         let transformer:(([CurrentCondition]) -> WeatherViewModel) = {
             let currentCondition:CurrentCondition? = $0.first
-            return WeatherViewModel(city: city.name, iconUrl: currentCondition?.weatherIconURL.first?.value, description: currentCondition?.weatherDesc.first?.value, observationTime: currentCondition?.observationTime, humidity: String(format: "%d %", currentCondition?.humidity ?? ""), temp: String(format: "%d°C", currentCondition?.tempC ?? ""))
+            return WeatherViewModel(city: city.name, iconUrl: currentCondition?.weatherIconURL.first?.value, description: currentCondition?.weatherDesc.first?.value, observationTime: String(format: "Last Updated Time:  %@",currentCondition?.observationTime ?? "-"), humidity: String(format: "Humidity: %@ %%", currentCondition?.humidity ?? ""), temp: String(format: "%@°C", currentCondition?.tempC ?? ""), tempF: String(format: "Temp: %@°F", currentCondition?.tempF ?? ""))
             
         }
         switch result {

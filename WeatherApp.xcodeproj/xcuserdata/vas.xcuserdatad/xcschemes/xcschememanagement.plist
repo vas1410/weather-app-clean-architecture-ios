@@ -29,6 +29,49 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Worker.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5D699D2922F876B300660393</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D699D5522F8775300660393</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D699D8522F87BC300660393</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D699DAE22F87F1800660393</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DE8CC6B22F4B0E50086688D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DE8CC7F22F4B0E70086688D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5DE8CC8A22F4B0E70086688D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

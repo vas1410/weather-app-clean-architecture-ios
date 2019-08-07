@@ -9,6 +9,6 @@
 import Foundation
 
 
-public protocol  AbstractWeatherInteractor:WeatherUsecase{
-    var worker:WeatherUsecase?{get set}
+public protocol  AbstractWeatherInteractor: WeatherUsecase {
+    var worker: WeatherUsecase? {get set}
 }
