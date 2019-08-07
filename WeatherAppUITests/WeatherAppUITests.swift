@@ -7,7 +7,6 @@
 //
 
 import XCTest
-
 class WeatherAppUITests: XCTestCase {
 
     override func setUp() {
@@ -29,6 +28,8 @@ class WeatherAppUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+       // XCUIApplication().tables/*@START_MENU_TOKEN@*/.staticTexts["Singapore"]/*[[".cells.staticTexts[\"Singapore\"]",".staticTexts[\"Singapore\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
     }
-
+    
 }

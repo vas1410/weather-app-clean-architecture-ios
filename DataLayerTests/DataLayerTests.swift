@@ -48,7 +48,6 @@ class DataLayerTests: XCTestCase {
                         }
                         switch result {
                         case .success(let currentWeather):
-                          
                                 XCTAssertNotNil(currentWeather.first)
                                 if let desc = currentWeather.first?.weatherDesc.first?.value {
                                   XCTAssertEqual(desc, "Partly cloudy")
